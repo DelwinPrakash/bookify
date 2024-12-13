@@ -1,5 +1,9 @@
+import Nav from "./components/Nav.jsx";
+
 export default function App(){
     return(
-        <div className="text-blue-400 text-xl">HI</div>
+        <div>
+            <Nav />
+        </div>
     );
 }
