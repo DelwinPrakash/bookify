@@ -5,7 +5,7 @@ export default function Nav(){
     return(
         <>
             {/* Desktop View */}
-            <aside className="hidden sm:flex bg-slate-900 h-screen w-16 flex flex-col items-center text-slate-400">
+            <aside className="fixed hidden sm:flex bg-slate-900 h-screen w-16 flex flex-col items-center text-slate-400">
                 <nav className="flex flex-col h-screen items-center justify-evenly w-9/12">
                     {/* Home */}
                     <a href="">
@@ -85,7 +85,7 @@ export default function Nav(){
                 </nav>
             </aside>
             {/* Mobile View */}
-            <aside className="sm:hidden bg-slate-900 fixed bottom-0 w-screen h-16 text-slate-400">
+            <aside className="fixed sm:hidden bg-slate-900 fixed bottom-0 w-screen h-16 text-slate-400">
                 <nav className="flex items-center justify-around w-screen h-full">
                     {/* Home */}
                     <a href="">
