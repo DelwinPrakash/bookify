@@ -1,9 +1,9 @@
-import Nav from "./components/Nav.jsx";
+import Home from "./pages/Home.jsx";
 
 export default function App(){
     return(
         <div>
-            <Nav />
+            <Home/>
         </div>
     );
 }
