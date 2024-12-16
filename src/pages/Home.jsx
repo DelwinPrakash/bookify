@@ -22,7 +22,7 @@ export default function Home(){
                     <div className="z-10">
                         <Nav/>
                     </div>
-                    <div className="mb-16 sm:mx-14 sm:px-3">
+                    <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
                         <Trending/>
                         <Popular/>
                         <Wishlist/>
