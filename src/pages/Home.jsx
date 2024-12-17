@@ -17,18 +17,17 @@ export default function Home(){
     }, []);
     return(
         <>
-            {isLoading ? <Loading/> : (
-                <section className="flex overflow-hidden">
-                    <div className="z-10">
-                        <Nav/>
-                    </div>
-                    <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
-                        <Trending/>
-                        <Popular/>
-                        <Wishlist/>
-                    </div>
-                </section>
-            )}
+            <section className="flex overflow-hidden">
+                {isLoading ? <Loading/> : null}
+                <div className="z-10">
+                    <Nav/>
+                </div>
+                <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
+                    <Trending/>
+                    <Popular/>
+                    <Wishlist/>
+                </div>
+            </section>
         </>
     );
 }
