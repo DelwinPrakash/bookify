@@ -1,19 +1,73 @@
+import { useEffect, useState } from "react";
+import { books } from "../../data/books.js";
+import Loading from "./Loading.jsx";
+
 export default function SearchBar(){
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        const loadData = () => {
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000)
+        };
+        loadData();
+    }, []);
+    function loading(){
+        console.log("click");
+        isLoading ? <Loading/> : null
+    }
     return(
-        <section className="h-36 w-full flex items-center justify-center">
-            <div className="flex justify-between gap-3 items-center w-3/5 px-2">
-                <input className="h-11 w-full px-3 text-lg rounded-full" placeholder="Search Book"/>
-                <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="30" 
-                    height="30" 
-                    fill="currentColor" 
-                    className="bi bi-search text-white cursor-pointer" 
-                    viewBox="0 0 16 16"
-                    >
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                </svg>
+        <>
+            <div className="h-fit w-screen">
+                <section className="h-36 flex items-center justify-center">
+                    <div className="flex items-center justify-center sm:mr-10 w-full gap-2">
+                        <input className="h-10 w-4/5 sm:h-11 sm:w-3/5 px-3 text-lg rounded-full" placeholder="Search Book"/>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="30" 
+                            height="30" 
+                            fill="currentColor" 
+                            className="bi bi-search text-white cursor-pointer" 
+                            viewBox="0 0 16 16"
+                            onClick={()=>{loading()}}
+                            >
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </div>
+                </section>
             </div>
-        </section>
+            <div className="h-fit w-full text-white p-4">
+                <h2 className="text-2xl font-bold mb-3 text-nowrap">Popular Books</h2>
+                <div className="flex gap-3 overflow-scroll custom-scrollbar shrink-0 sm:mr-20 sm:pr-1">
+                    {books.map((book, index) => {
+                        return (
+                            <div key={index} className="relative rounded-lg overflow-hidden shrink-0">
+                                <img
+                                    src={`${book}`}
+                                    alt={`book_${index}`}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+            <div className="h-fit w-full text-white p-4">
+                <h2 className="text-2xl font-bold mb-3 text-nowrap">Trending Books</h2>
+                <div className="flex gap-3 overflow-scroll custom-scrollbar shrink-0 sm:mr-20 sm:pr-1">
+                    {books.map((book, index) => {
+                        return (
+                            <div key={index} className="relative rounded-lg overflow-hidden shrink-0">
+                                <img
+                                    src={`${book}`}
+                                    alt={`book_${index}`}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </>
     );
 }
