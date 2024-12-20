@@ -3,25 +3,23 @@ import { books } from "../../data/books.js";
 import Loading from "./Loading.jsx";
 
 export default function SearchBar(){
-    const [isLoading, setIsLoading] = useState(true);
-    useEffect(() => {
+    const [isLoading, setIsLoading] = useState(false);
+    function loading(){
+        setIsLoading(true);
         const loadData = () => {
             setTimeout(() => {
                 setIsLoading(false);
-            }, 2000)
+            }, 2000);
         };
         loadData();
-    }, []);
-    function loading(){
-        console.log("click");
-        isLoading ? <Loading/> : null
     }
     return(
         <>
+            {isLoading ? <Loading/> : null}
             <div className="h-fit w-screen">
                 <section className="h-36 flex items-center justify-center">
                     <div className="flex items-center justify-center sm:mr-10 w-full gap-2">
-                        <input className="h-10 w-4/5 sm:h-11 sm:w-3/5 px-3 text-lg rounded-full" placeholder="Search Book"/>
+                        <input name="searchField" className="h-10 w-4/5 sm:h-11 sm:w-3/5 px-3 text-lg rounded-full" placeholder="Search Book" autoFocus/>
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             width="30" 
