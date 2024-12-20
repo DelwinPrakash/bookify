@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { books } from "../../data/books.js";
 import Loading from "./Loading.jsx";
 
@@ -19,7 +19,18 @@ export default function SearchBar(){
             <div className="h-fit w-screen">
                 <section className="h-36 flex items-center justify-center">
                     <div className="flex items-center justify-center sm:mr-10 w-full gap-2">
-                        <input name="searchField" className="h-10 w-4/5 sm:h-11 sm:w-3/5 px-3 text-lg rounded-full" placeholder="Search Book" autoFocus/>
+                        <input
+                            id="searchField"
+                            name="searchField"
+                            className="h-10 w-4/5 sm:h-11 sm:w-3/5 px-3 text-lg rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Search Book"
+                            autoFocus
+                            onKeyDown={(e) => {
+                                if(e.key === "Enter"){
+                                    loading();
+                                }
+                            }}
+                            />
                         <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             width="30" 
