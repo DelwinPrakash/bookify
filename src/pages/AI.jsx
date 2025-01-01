@@ -1,3 +1,4 @@
+import ChatBox from "../components/ChatBox";
 import Nav from "../components/nav";
 export default function AI(){
     return(
@@ -6,7 +7,7 @@ export default function AI(){
                 <Nav/>
             </div>
             <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
-                <h1>AI chatbot</h1>
+                <ChatBox/>
             </div>
         </>
     );
