@@ -35,7 +35,7 @@ export default function Auth(){
                         {isLogin ? "Login" : "Register"}
                     </h2>
                     <form onSubmit={handleSubmit}>
-                        <div className="mb-4">
+                        <div className="mb-2">
                             <label htmlFor="email" className="block text-sm font-medium text-white">
                                 Email
                             </label>
@@ -81,6 +81,17 @@ export default function Auth(){
                             className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">
                             {isLogin ? "Login" : "Register"}
                         </button>
+                        
+                        <div className="flex justify-center items-center py-1">
+                            <h4 className="text-white">OR</h4>
+                        </div>
+
+                        <button
+                            type="button"
+                            className="w-full bg-white py-2 rounded-lg hover:bg-blue-600">
+                            Continue with Google
+                        </button>
+                    
                     </form>
 
                     <div className="mt-4 text-center">
