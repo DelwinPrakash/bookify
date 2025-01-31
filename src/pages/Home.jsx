@@ -9,25 +9,34 @@ export default function Home(){
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         const loadData = () => {
-            setTimeout(() => {
+            fetch("https://picsum.photos/200/300?random=0").then(() => {
                 setIsLoading(false);
-            }, 2000)
-        };
+            })
+        }
         loadData();
     }, []);
     return(
-        <>
-            <section className="flex overflow-hidden">
-                {isLoading ? <Loading/> : null}
-                <div className="z-10">
-                    <Nav/>
-                </div>
-                <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
-                    <Trending/>
-                    <Popular/>
-                    <Wishlist/>
-                </div>
-            </section>
-        </>
+        // <>
+        //     <section className="flex overflow-hidden">
+        //         {isLoading && <Loading/>}
+        //         <div className="mb-16 sm:mb-0 sm:mx-14 sm:px-3">
+        //             <Trending/>
+        //             <Popular/>
+        //             <Wishlist/>
+        //         </div>
+        //     </section>
+        // </>
+        <div className="w-full sm:ml-16">
+                {/* <section className="flex overflow-hidden"> */}
+                    {isLoading && <Loading/>}
+                    <div className="flex flex-col mb-16 sm:mb-0 p-3">
+                        <Trending/>
+                        <Popular/>
+                        <Wishlist/>
+                    </div>
+                {/* </section> */}
+
+
+        </div>
     );
 }
