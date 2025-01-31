@@ -4,16 +4,20 @@ import Search from "./pages/Search.jsx";
 import AI from "./pages/AI.jsx";
 import Profile from "./pages/Profile.jsx";
 import Auth from "./pages/Auth.jsx";
+import Nav from "./components/nav.jsx";
 
 export default function App(){
     return(
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/search" element={<Search/>}/>
-            <Route path="/ai" element={<AI/>}/>
-            <Route path="/profile" element={<Profile/>}/>
-            <Route path="/auth" element={<Auth/>}/>
-        </Routes>
+        <div className="flex flex-col sm:flex-row">
+            <Nav/>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/search" element={<Search/>}/>
+                <Route path="/ai" element={<AI/>}/>
+                <Route path="/profile" element={<Profile/>}/>
+                <Route path="/auth" element={<Auth/>}/>
+            </Routes>
+        </div>
 
     );
 }
