@@ -1,8 +1,7 @@
 import ChatBox from "../components/ChatBox";
-import Nav from "../components/nav";
 export default function AI(){
     return(
-        <div className="w-full sm:ml-16 p-4">
+        <div className="w-full sm:ml-16 p-2 pb-20 pt-10 sm:p-2 h-screen bg-slate-950">
             <ChatBox/>
         </div>
     );

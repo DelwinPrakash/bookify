@@ -26,7 +26,7 @@ export default function Auth(){
     }
     return(
         // <div className="min-h-screen flex justify-center items-center">
-        <div className="w-full sm:ml-16 p-4">
+        <div className="w-full h-screen sm:ml-16 p-4 flex flex-col items-center justify-center">
             <div className="w-full max-w-md p-6 sm:bg-slate-900 rounded-xl sm:shadow-lg">
                 <h2 className="text-2xl font-semibold text-center mb-6 text-white">
                     {isLogin ? "Login" : "Register"}
