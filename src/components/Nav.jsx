@@ -1,8 +1,9 @@
 import React from "react";
 import "../index.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Nav() {
+    const location = useLocation();
     return (
         <>
             <aside className="fixed bg-slate-900 sm:bg-slate-900 h-16 sm:h-screen w-full sm:w-16 flex sm:flex-col items-center sm:justify-evenly text-slate-400 bottom-0 sm:top-0 z-10">
@@ -14,7 +15,7 @@ export default function Nav() {
                             width="20"
                             height="20"
                             fill="currentColor"
-                            className="bi bi-house-door hover:text-white"
+                            className={`bi bi-house-door hover:text-white ${location.pathname === "/" ? "text-white" : "text-gray-500"}`}
                             viewBox="0 0 16 16"
                         >
                             <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z" />
@@ -28,7 +29,7 @@ export default function Nav() {
                             width="20"
                             height="20"
                             fill="currentColor"
-                            className="bi bi-search hover:text-white"
+                            className={`bi bi-search hover:text-white ${location.pathname === "/search" ? "text-white" : "text-gray-500"}`}
                             viewBox="0 0 16 16"
                         >
                             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
@@ -42,7 +43,7 @@ export default function Nav() {
                             width="20"
                             height="20"
                             fill="currentColor"
-                            className="bi bi-robot hover:text-white"
+                            className={`bi bi-robot hover:text-white ${location.pathname === "/ai" ? "text-white" : "text-gray-500"}`}
                             viewBox="0 0 16 16"
                         >
                             <path d="M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135" />
@@ -57,7 +58,7 @@ export default function Nav() {
                             width="20"
                             height="20"
                             fill="currentColor"
-                            className="bi bi-collection-play hover:text-white"
+                            className={`bi bi-collection-play hover:text-white ${location.pathname === "/wishlist" ? "text-white" : "text-gray-500"}`}
                             viewBox="0 0 16 16"
                         >
                             <path d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z" />
@@ -72,7 +73,7 @@ export default function Nav() {
                             width="20"
                             height="20"
                             fill="currentColor"
-                            className="bi bi-person-circle hover:text-white"
+                            className={`bi bi-person-circle hover:text-white ${location.pathname === "/profile" ? "text-white" : "text-gray-500"}`}
                             viewBox="0 0 16 16"
                         >
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
