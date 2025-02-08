@@ -1,7 +1,7 @@
 import { books } from "../../../data/books";
 export default function Wishlist(){
     return(
-        <div className="h-fit w-full text-white">
+        <div className="h-fit w-full text-white mb-3">
             <h2 className="text-2xl font-bold mb-3 text-nowrap">Your Wishlist</h2>
             <div className="flex gap-3 overflow-scroll custom-scrollbar shrink-0">
                 {books.map((book, index) => {
