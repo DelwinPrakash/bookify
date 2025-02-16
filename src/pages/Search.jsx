@@ -16,7 +16,8 @@ export default function Search(){
             loadData();
         }, []);
     return(
-        <div className="w-full sm:ml-16 p-4">
+        // <div className="w-full sm:ml-16 p-4">
+        <div className="w-full sm:ml-16 p-4 pb-16 sm:p-2">
             {isLoading && <Loading/>}
             <SearchBar/>
             <Popular/>

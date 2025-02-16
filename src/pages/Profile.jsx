@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 export default function Profile(){
-    const [token, setToken] = useState("ji");
+    const [token, setToken] = useState("");
     if(token == "" || token == undefined || token == null){
         return <Navigate to="/auth"/>
     }

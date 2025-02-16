@@ -36,25 +36,24 @@ export default function ChatBox() {
     };
 
     return (
-        <div className="h-screen">
-            <div className="custom-scrollbar flex flex-col h-full max-w-3xl mx-auto py-8 p-6 shadow-2xl shadow-sky-200 rounded-lg">
-                <div className="flex-1 overflow-y-auto mb-4 custom-scrollbar">
+        <div className="h-full pb-14 sm:p-0">
+            <div className="bg-slate-800 sm:shadow-2xl sm:shadow-cyan-200 custom-scrollbar flex flex-col h-full max-w-3xl mx-auto py-6 px-3 rounded-lg">
+                <div className="border border-slate-700 rounded-lg flex-1 p-2 overflow-y-auto mb-4 custom-scrollbar">
                     {messages.map((msg, index) => (
                         <Message key={index} sender={msg.sender} text={msg.text} />
                     ))}
                 </div>
-                <div className="flex mb-16 sm:mb-0">
+                <div className="flex w-full max-w-3xl mx-auto p-1 sticky bottom-0 rounded-lg">
                     <input
                         type="text"
-                        className="flex-1 p-2 border rounded-l-lg focus:outline-none"
+                        className="bg-zinc-950 text-white flex-1 min-w-0 p-2 py-3 sm:py-2 border border-sky-700 rounded-l-lg focus:outline-none"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
                         placeholder="Type your message..."
-                    autoFocus
                     />
                     <button
-                        className="px-5 bg-blue-500 text-white rounded-r-lg hover:bg-blue-400"
+                        className="px-4 bg-blue-500 text-white rounded-r-lg hover:bg-blue-400"
                         onClick={sendMessage}
                     >
                         Send

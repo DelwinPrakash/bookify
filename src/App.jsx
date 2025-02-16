@@ -4,7 +4,7 @@ import Search from "./pages/Search.jsx";
 import AI from "./pages/AI.jsx";
 import Profile from "./pages/Profile.jsx";
 import Auth from "./pages/Auth.jsx";
-import Nav from "./components/nav.jsx";
+import Nav from "./components/Nav.jsx";
 
 export default function App(){
     return(
@@ -18,6 +18,5 @@ export default function App(){
                 <Route path="/auth" element={<Auth/>}/>
             </Routes>
         </div>
-
     );
 }

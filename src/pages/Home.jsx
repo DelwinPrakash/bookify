@@ -16,12 +16,12 @@ export default function Home(){
     }, []);
     return(
         <div className="w-full sm:ml-16">
-                    {isLoading && <Loading/>}
-                    <div className="flex flex-col mb-16 sm:mb-0 p-3">
-                        <Trending/>
-                        <Popular/>
-                        <Wishlist/>
-                    </div>
+            {isLoading && <Loading/>}
+            <div className="flex flex-col pb-16 sm:mb-0 p-3">
+                <Trending/>
+                <Popular/>
+                <Wishlist/>
+            </div>
         </div>
     );
 }
